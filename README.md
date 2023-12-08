@@ -41,7 +41,7 @@ clean_argument="-mtime +8"
 
 Les variables spécifiques serveur par serveur sont à définir dans des fichiers tiers :
 - un fichier `backuprc` pour les options MySQL/MariaDB/PostgreSQL et Prometheus
-- des fichiers backuprc_docker_mysql / backuprc_docker_mariadb / backuprc_docker_postgres / backuprc_docker_ldap / backuprc_docker_mongo / backuprc_docker_elasticsearch pour préciser les caractéristiques des Docker
+- des fichiers backuprc_docker_mysql / backuprc_docker_mariadb / backuprc_docker_postgres / backuprc_docker_ldap / backuprc_docker_mongo pour préciser les caractéristiques des Docker
 
 Ces fichiers backuprc_xxx sont des fichiers texte dont le format est le suivant (une ligne pour chaque conteneur Docker) :
 Format de backuprc_docker_postgres : <CONTAINER_NAME>
