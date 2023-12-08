@@ -1,0 +1,52 @@
+##################################
+#General
+##################################
+
+#chemin du rapport
+REPORTDIR="/var/www/html"
+
+#argument de la commande find pour la purge des dumps plus vieux que 8 jours:
+#clean_argument="-mtime +8"
+
+#exclusion de certaines bases postgres
+DATABASES_EXCLUDE="^$|^postgres|^template|^information_schema|^performance_schema"
+#DATABASES_EXCLUDE="^$|^do_not_backup|^not_this_database|^postgres|^template"
+
+
+
+##################################
+#Mysql
+##################################
+
+MYSQL_OPT="-u root -S /var/run/mysqld/mysqld.sock --password=xxxxxx"
+
+
+
+##################################
+#POSTGRES
+##################################
+
+#par défaut backup full tous les jours.
+#si full_dayofweek est renseigné, backup full une fois par mois. Format attendu : 1(lundi) à 7(dimanche)
+#dans l'exemple suivant "6", indique que le full ne se produira que le premier samedi du mois
+#full_dayofweek="6"
+
+
+#les autres jours pg_dump excluera/incluera des tables/schema sous la forme suivante (pipe comme séparateur base.schema.table):
+#PG_INC_SCHEMA="base1.schema1|base2.schema3"
+#PG_EXC_SCHEMA="base1.schema1|base2.schema3"
+#PG_INC_TABLE="base1.schema1.table2|base2.schema3.table1"
+#PG_EXC_TABLE="base1.schema1.table2|base2.schema3.table1"
+#PG_EXC_SCHEMA="mydatabase.myschema"
+#PG_EXC_SCHEMA="mydatabase.myschema1|mydatabase.myschema2|mydatabase2.myschema"
+#PG_EXC_TABLE="another_database.schema1.table2"
+
+#pour chaque base, tous les switches sont évalués, et le dernier switch déclaré est pris en compte (si il existe)
+
+##################################
+#PROMETHEUS
+##################################
+# URL de base de Prometheus
+PROMETHEUS_URL='http://127.0.0.1:9090'
+# Répertoire contenant les snapshots
+PROMETHEUS_SNAPSHOTS_DIR='/var/www/html/prometheus/snapshots'
