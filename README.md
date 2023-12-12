@@ -44,12 +44,14 @@ Les variables spécifiques serveur par serveur sont à définir dans des fichier
 - des fichiers backuprc_docker_mysql / backuprc_docker_mariadb / backuprc_docker_postgres / backuprc_docker_ldap / backuprc_docker_mongo pour préciser les caractéristiques des Docker
 
 Ces fichiers backuprc_xxx sont des fichiers texte dont le format est le suivant (une ligne pour chaque conteneur Docker) :
-Format de backuprc_docker_postgres : <CONTAINER_NAME>
-Ou si le user par défaut a été modifié : <CONTAINER_NAME>:<pgdefaultuser>:<pgdefaultdatabase>
 
-Format de backuprc_docker_mysql / backuprc_docker_mariadb / backuprc_docker_mongo : <CONTAINER_NAME>:<backupuser>:<backuppassword>
+Format de backuprc_docker_postgres : ```<CONTAINER_NAME>```
 
-Format de backuprc_docker_ldap : <CONTAINER_NAME>
+Ou si le user par défaut a été modifié : ```<CONTAINER_NAME>:<pgdefaultuser>:<pgdefaultdatabase>```
+
+Format de backuprc_docker_mysql / backuprc_docker_mariadb / backuprc_docker_mongo : ```<CONTAINER_NAME>:<backupuser>:<backuppassword>```
+
+Format de backuprc_docker_ldap : ```<CONTAINER_NAME>```
 
 ## Utilisation
 Le script peut être lancé en cron.
